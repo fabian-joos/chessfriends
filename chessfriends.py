@@ -92,7 +92,9 @@ class CfTournament:
 
     Methods:
         __init__(): Initializes the tournament with default values.
+        add_players(): Adds one or more players to the players list.
         round_robin_pairing(): Generates a round-robin pairing for the players in the tournament.
+        match_schedule(): Prints the complete match schedule.
         reset_scoreboard(): Resets the scoreboard for all players.
         eval_match(match): Evaluates the result of a match and returns the scores for the players.
     """
