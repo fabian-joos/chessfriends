@@ -168,6 +168,19 @@ class CfTournament:
                             self))
                 if i % 2 == 0: self.matchdays[matchday][i].swap_opponents()
 
+    def match_schedule(self):
+        for i, matchday in enumerate(self.matchdays):
+            print(f"--------------------------- Matchday {i+1} ---------------------------")
+            for j, match in enumerate(matchday):
+                print(f"Game {j+1}: ({match.result}) "
+                    f"{match.opponents[0].name} "
+                    f"({match.opponents[0].rating}, {match.time_limits[0]} min.)"
+                    f" vs. "
+                    f"{match.opponents[1].name} "
+                    f"({match.opponents[1].rating}, {match.time_limits[1]} min.)")
+            print("\t")
+        print("\n")
+
     def reset_scoreboard(self):
         for player in self.players:
             self.scoreboard[player] = {}
