@@ -77,9 +77,14 @@ class CfTournament:
         reset_scoreboard(): Resets the scoreboard for all players.
         eval_match(match): Evaluates the result of a match and returns the scores for the players.
     """
-    def __init__(self):
-        self.start_date = datetime(2000, 1, 1)
-        self.end_date = datetime(2000, 11, 30)
+    def __init__(self, start_date: datetime, end_date: datetime):
+        if not isinstance(start_date, datetime):
+            raise TypeError("start_date must be of type datetime")
+        if not isinstance(end_date, datetime):
+            raise TypeError("end_date must be of type datetime")
+
+        self.start_date = start_date
+        self.end_date = end_date
         self.players = []
         self.matchdays = []
         self.score_win = 3
