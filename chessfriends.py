@@ -190,14 +190,27 @@ class CfTournament:
             self.scoreboard[player]["score"] = 0
 
     def eval_match(self, match):
+        """
+        Evaluate the result of a chess match and assign bonus scores to the players.
+        Args:
+            match (CfMatch): An object representing the match, which has a 'result' attribute.
+                             The 'result' attribute should be:
+                             - 1 if White wins the match
+                             - 2 if Black wins the match
+                             - 3 if the match ends in a draw
+        Returns:
+            list: A list containing two integers. 
+                  The first integer is the bonus score for the White player,
+                  and the second integer is the bonus score for the Black player.
+        """
         scores_bonus = [0,0]
-        if match.result == 1:
-            scores_bonus[0] = self.score_win
-        elif match.result == 2:
-            scores_bonus[1] = self.score_win
-        elif match.result == 3:
-            scores_bonus[0] = self.score_draw
-            scores_bonus[1] = self.score_draw
+        if match.result == 1:                 # White wins the match
+            scores_bonus[0] = self.score_win  # White player gets winning bonus score
+        elif match.result == 2:               # Black wins the match
+            scores_bonus[1] = self.score_win  # Black player gets winning bonus score
+        elif match.result == 3:               # Match end in a draw
+            scores_bonus[0] = self.score_draw # Both players get draw bonus score
+            scores_bonus[1] = self.score_draw #
         return scores_bonus
 
 
