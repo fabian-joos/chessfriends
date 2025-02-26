@@ -224,9 +224,11 @@ class CfMatch:
     """
     Represents a chess match between two players in a tournament.
     Attributes:
-        opponents (list): A list containing two CfPlayer objects, representing the white and black players.
+        opponents (list): A list containing two CfPlayer objects, 
+                          representing the white and black players.
         tournament (CfTournament): The tournament in which the match is taking place.
-        result (int): The result of the match (0 for ongoing, 1 for white wins, 2 for black wins, 3 for draw).
+        result (int): The result of the match
+                      (0 for ongoing, 1 for white wins, 2 for black wins, 3 for draw).
         time_limits (list): A list containing the time limits for the white and black players.
     Methods:
         __init__(player_white: CfPlayer, player_black: CfPlayer, tournament: CfTournament):
