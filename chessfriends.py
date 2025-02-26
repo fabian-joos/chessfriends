@@ -60,7 +60,8 @@ class CfPlayer:
 
 class CfTournament:
     """
-    CfTournament is a class that represents a chess tournament. It includes methods for managing players, generating match pairings, and calculating scores.
+    CfTournament is a class that represents a chess tournament.
+    It includes methods for managing players, generating match pairings, and calculating scores.
 
     Attributes:
         start_date (datetime): The start date of the tournament.
