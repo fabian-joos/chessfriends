@@ -96,7 +96,7 @@ class CfTournament:
         round_robin_pairing(): Generates a round-robin pairing for the players in the tournament.
         match_schedule(): Prints the complete match schedule.
         reset_scoreboard(): Resets the scoreboard for all players.
-        eval_match(match): Evaluates the result of a match and returns the scores for the players.
+        evaluate_match(match): Evaluates the result of a match and returns the scores for the players.
     """
     def __init__(self, start_date: datetime, end_date: datetime):
         if not isinstance(start_date, datetime):
@@ -189,7 +189,7 @@ class CfTournament:
             self.scoreboard[player]["games"] = 0
             self.scoreboard[player]["score"] = 0
 
-    def eval_match(self, match):
+    def evaluate_match(self, match):
         """
         Evaluate the result of a chess match and assign bonus scores to the players.
         Args:
@@ -203,6 +203,7 @@ class CfTournament:
                   The first integer is the bonus score for the White player,
                   and the second integer is the bonus score for the Black player.
         """
+        players = [player for player in match.opponents]
         scores_bonus = [0,0]
         if match.result == 1:                 # White wins the match
             scores_bonus[0] = self.score_win  # White player gets winning bonus score
@@ -211,7 +212,10 @@ class CfTournament:
         elif match.result == 3:               # Match end in a draw
             scores_bonus[0] = self.score_draw # Both players get draw bonus score
             scores_bonus[1] = self.score_draw #
-        return scores_bonus
+        for i, player in enumerate(players):
+            self.scoreboard[player]["games"] += 1
+            self.scoreboard[player]["score"] += scores_bonus[i]
+        return players, scores_bonus
 
 
 
