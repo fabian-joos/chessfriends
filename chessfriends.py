@@ -52,10 +52,28 @@ class CfPlayer:
     __init__(self, first_name: str, last_name: str, rating: int):
         Constructs all the necessary attributes for the player object.
     """
-    def __init__(self, first_name: str, last_name: str, rating: int):
+    def __init__(self, first_name: str, last_name: str, rating: int = 1000):
         self.first_name = first_name
         self.last_name = last_name
+        self._rating = None
         self.rating = rating
+
+    @property
+    def name(self):
+        """
+        Returns the full name of the person by combining the first name and last name.
+        """
+        return f"{self.first_name} {self.last_name}"
+
+    @property
+    def rating(self):
+        return self._rating
+
+    @rating.setter
+    def rating(self, rating):
+        if rating < 0:
+            raise ValueError("Rating can not be negative")
+        self._rating = rating
 
 
 class CfTournament:
