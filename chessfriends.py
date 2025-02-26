@@ -110,6 +110,30 @@ class CfTournament:
         self.score_draw = 1
         self.scoreboard = {}
 
+    def add_players(self, *args):
+        """
+        Adds one or more players to the players list.
+        Parameters:
+        *args: Variable length argument list. Each argument can be a CfPlayer object 
+               or a list of CfPlayer objects.
+        Raises:
+        TypeError: If any argument is not a CfPlayer object or a list of CfPlayer objects,
+                   or if any element in a list argument is not a CfPlayer object.
+        """
+
+        for arg in args:
+            if isinstance(arg, list):
+                for player in arg:
+                    if isinstance(player, CfPlayer):
+                        self.players.append(player)
+                    else:
+                        raise TypeError("All elements in the list must be CfPlayer objects")
+            elif isinstance(arg, CfPlayer):
+                self.players.append(arg)
+            else:
+                raise TypeError("Arguments must be CfPlayer objects or lists of CfPlayer objects")
+
+
     def round_robin_pairing(self):
         """
         Generates a round-robin pairing for the players in the tournament.
