@@ -161,7 +161,8 @@ class CfTournament:
             self.matchdays[matchday].append(CfMatch(fixed_player,
                                               rotating_players[matchday],
                                               self))
-            if matchday % 2 != 0: self.matchdays[matchday][0].swap_opponents()
+            if matchday % 2 != 0:
+                self.matchdays[matchday][0].swap_opponents()
 
             for i in range(1, (number_of_players // 2)):
                 self.matchdays[matchday].append(
