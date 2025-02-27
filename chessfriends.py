@@ -77,7 +77,8 @@ class CfTournament:
         round_robin_pairing(): Generates a round-robin pairing for the players in the tournament.
         match_schedule(): Prints the complete match schedule.
         reset_scoreboard(): Resets the scoreboard for all players.
-        evaluate_match(match): Evaluates the result of a match and returns the scores for the players.
+        evaluate_match(match): Evaluates the result of a match
+        and returns the scores for the players.
     """
     def __init__(self, start_date: datetime, end_date: datetime):
         if not isinstance(start_date, datetime):
@@ -155,6 +156,12 @@ class CfTournament:
         self.reset_scoreboard()
 
     def match_schedule(self):
+        """
+        Prints the schedule of matches for each matchday.
+        This method iterates through the list of matchdays and prints the details
+        of each match, including the match number, result, opponents' names, 
+        ratings, and time limits.
+        """
         for i, matchday in enumerate(self.matchdays):
             print(f"--------------------------- Matchday {i+1} ---------------------------")
             for j, match in enumerate(matchday):
@@ -168,6 +175,12 @@ class CfTournament:
         print("\n")
 
     def reset_scoreboard(self):
+        """
+        Resets the scoreboard for all players.
+        This method initializes the scoreboard dictionary for each player in the 
+        self.players list. Each player's scoreboard will have their games and 
+        score set to 0.
+        """
         self.scoreboard = {}
         for player in self.players:
             self.scoreboard[player] = {}
@@ -175,12 +188,23 @@ class CfTournament:
             self.scoreboard[player]["score"] = 0
 
     def evaluate_scoreboard(self):
+        """
+        Evaluates the scoreboard by resetting it and then evaluating all matches.
+        This method first resets the scoreboard to its initial state. 
+        It then iterates through each matchday and evaluates each match within the matchday
+        to update the scoreboard inplace.
+        """
+
         self.reset_scoreboard()
         for matchday in self.matchdays:
             for match in matchday:
                 self.evaluate_match(match)
 
     def print_stats(self):
+        """
+        Prints the statistics of each player in the scoreboard.
+        The statistics include the player's name, score, and the number of games played.
+        """
         for player, stats in self.scoreboard.items():
             print(f"{player.name}: "
                 f"{stats['score']} "
@@ -246,7 +270,6 @@ class CfMatch:
         draw():
             Sets the result of the match to indicate a draw.
     """
-    
     def __init__(self, player_white: CfPlayer, player_black: CfPlayer, tournament: CfTournament):
         self.opponents = [player_white, player_black]
         self.tournament = tournament
@@ -255,6 +278,12 @@ class CfMatch:
         self.assign_handicap()
 
     def swap_opponents(self):
+        """
+        Swap the positions of the two opponents and their corresponding time limits.
+        This method exchanges the first and second elements in the `opponents` list
+        and the `time_limits` list, effectively swapping the opponents and their
+        associated time limits.
+        """
         opponent_temp = self.opponents[0]
         self.opponents[0] = self.opponents[1]
         self.opponents[1] = opponent_temp
@@ -264,6 +293,11 @@ class CfMatch:
         self.time_limits[1] = time_limit_temp
 
     def assign_handicap(self):
+        """
+        Assigns a time handicap based on the rating difference between two opponents.
+        The time handicap is calculated as 2.5% of the rating difference. 
+        The opponent with higher rating gets their time limit decreased by this handicap.
+        """
         rating_diff = self.opponents[0].rating - self.opponents[1].rating
         time_handicap = int(rating_diff * 0.025)
         if rating_diff >= 0:
@@ -272,10 +306,25 @@ class CfMatch:
             self.time_limits[1] += time_handicap # add time handicap because it has a negative value
 
     def white_wins(self):
+        """
+        Sets the result of the game to indicate that White has won.
+        This method updates the `result` attribute of the game instance to 1,
+        signifying that the White player is the winner.
+        """
         self.result = 1
 
     def black_wins(self):
+        """
+        Sets the result of the game to indicate that Black has won.
+        This method updates the `result` attribute of the game instance to 2,
+        signifying that the Black player is the winner.
+        """
         self.result = 2
 
     def draw(self):
+        """
+        Sets the result of the game to indicate a draw.
+        This method updates the `result` attribute of the game instance to 3,
+        signifying that the game ended in a draw.
+        """
         self.result = 3
