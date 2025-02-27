@@ -150,7 +150,8 @@ class CfTournament:
                     CfMatch(rotating_players[number_of_players - i - 1 + matchday],
                             rotating_players[matchday + i],
                             self))
-                if i % 2 == 0: self.matchdays[matchday][i].swap_opponents()
+                if i % 2 == 0:
+                    self.matchdays[matchday][i].swap_opponents()
         self.reset_scoreboard()
 
     def match_schedule(self):
