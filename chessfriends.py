@@ -145,7 +145,7 @@ class CfTournament:
         to generate the pairings for each round. If the round number is odd, the opponents 
         of the first match are swapped. Similarly, if the index of the match in the round 
         is even, the opponents of that match are swapped.
-        The generated pairings are stored in the `self.rounds` list.
+        The generated pairings are stored in the `self.matchdays` list.
         Attributes:
             self.players (list): List of players participating in the tournament.
             self.matchdays (list): List to store the pairings for each round.
@@ -200,23 +200,26 @@ class CfTournament:
                              - 2 if Black wins the match
                              - 3 if the match ends in a draw
         Returns:
-            list: A list containing two integers. 
-                  The first integer is the bonus score for the White player,
-                  and the second integer is the bonus score for the Black player.
+            scores:    A list containing two integers. 
+                       The first integer is the bonus score for the White player,
+                       and the second integer is the bonus score for the Black player.
+            opponents: A list containing the two CfPlayer objects.
+                       The first object is the White player,
+                       the second object is the Black player.
         """
-        players = [player for player in match.opponents]
-        scores_bonus = [0,0]
-        if match.result == 1:                 # White wins the match
-            scores_bonus[0] = self.score_win  # White player gets winning bonus score
-        elif match.result == 2:               # Black wins the match
-            scores_bonus[1] = self.score_win  # Black player gets winning bonus score
-        elif match.result == 3:               # Match end in a draw
-            scores_bonus[0] = self.score_draw # Both players get draw bonus score
-            scores_bonus[1] = self.score_draw #
-        for i, player in enumerate(players):
+        opponents = [player for player in match.opponents]
+        scores = [0,0]
+        if match.result == 1:             # White wins the match
+            scores[0] = self.score_win    # White player gets winning bonus score
+        elif match.result == 2:           # Black wins the match
+            scores[1] = self.score_win    # Black player gets winning bonus score
+        elif match.result == 3:           # Match end in a draw
+            scores[0] = self.score_draw   # Both players get draw bonus score
+            scores[1] = self.score_draw   #
+        for i, player in enumerate(opponents):
             self.scoreboard[player]["games"] += 1
-            self.scoreboard[player]["score"] += scores_bonus[i]
-        return players, scores_bonus
+            self.scoreboard[player]["score"] += scores[i]
+        return opponents, scores
 
 
 
