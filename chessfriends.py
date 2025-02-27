@@ -11,26 +11,7 @@ CfPlayer: Represents a chess player with attributes for first name, last name, a
 CfTournament: Manages a chess tournament, including players, match pairings, and scores.
 CfMatch: Represents a chess match between two players, including the result and time limits.
 
-Usage:
-------
-1. Create CfPlayer objects for each player.
-2. Add players to a CfTournament object.
-3. Use CfTournament methods to manage the tournament, generate pairings, and calculate scores.
-
-Example:
---------
-player1 = CfPlayer("John", "Doe", 1500)
-player2 = CfPlayer("Jane", "Smith", 1600)
-tournament = CfTournament()
-tournament.players = [CfPlayer("0", "Fleur", 1340),
-                      CfPlayer("1", "Tim", 1800),
-                      CfPlayer("2", "Walt", 1000),
-                      CfPlayer("3", "Louis", 1500),
-                      CfPlayer("4", "Terry", 1600),
-                      CfPlayer("5", "Alex", 2000),
-                      CfPlayer("6", "Fred", 1540),
-                      CfPlayer("7", "Lisa", 1400)]
-tournament.round_robin_pairing()
+For usage demo see the demo.py file
 """
 
 
