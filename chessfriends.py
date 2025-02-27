@@ -185,6 +185,7 @@ class CfTournament:
         print("\n")
 
     def reset_scoreboard(self):
+        self.scoreboard = {}
         for player in self.players:
             self.scoreboard[player] = {}
             self.scoreboard[player]["games"] = 0
