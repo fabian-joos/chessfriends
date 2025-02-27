@@ -197,6 +197,12 @@ class CfTournament:
             for match in matchday:
                 self.evaluate_match(match)
 
+    def print_stats(self):
+        for player, stats in self.scoreboard.items():
+            print(f"{player.name}: "
+                f"{stats['score']} "
+                f"({stats['games']})")
+
     def evaluate_match(self, match):
         """
         Evaluate the result of a chess match and assign bonus scores to the players.
