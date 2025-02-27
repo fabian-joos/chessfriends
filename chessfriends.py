@@ -222,6 +222,9 @@ class CfTournament:
         """
         opponents = [player for player in match.opponents]
         scores = [0,0]
+
+        if match.result == 0:
+            return opponents, scores
         if match.result == 1:             # White wins the match
             scores[0] = self.score_win    # White player gets winning bonus score
         elif match.result == 2:           # Black wins the match
