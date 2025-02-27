@@ -191,6 +191,12 @@ class CfTournament:
             self.scoreboard[player]["games"] = 0
             self.scoreboard[player]["score"] = 0
 
+    def evaluate_scoreboard(self):
+        self.reset_scoreboard()
+        for matchday in self.matchdays:
+            for match in matchday:
+                self.evaluate_match(match)
+
     def evaluate_match(self, match):
         """
         Evaluate the result of a chess match and assign bonus scores to the players.
