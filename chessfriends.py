@@ -1,3 +1,4 @@
+from enum import Enum
 from datetime import datetime
 
 
@@ -13,6 +14,18 @@ CfMatch: Represents a chess match between two players, including the result and 
 
 For usage demo see the demo.py file
 """
+
+
+
+class MatchResult(Enum):
+    ONGOING = 0
+    WHITE_WINS = 1
+    BLACK_WINS = 2
+    DRAW = 3
+
+    def __str__(self):
+        return self.name
+
 
 
 class CfPlayer:
@@ -55,6 +68,7 @@ class CfPlayer:
         if rating < 0:
             raise ValueError("Rating can not be negative")
         self._rating = rating
+
 
 
 class CfTournament:
@@ -230,15 +244,15 @@ class CfTournament:
         opponents = [player for player in match.opponents]
         scores = [0,0]
 
-        if match.result == 0:
+        if match.result == MatchResult.ONGOING:
             return opponents, scores
-        if match.result == 1:             # White wins the match
-            scores[0] = self.score_win    # White player gets winning bonus score
-        elif match.result == 2:           # Black wins the match
-            scores[1] = self.score_win    # Black player gets winning bonus score
-        elif match.result == 3:           # Match end in a draw
-            scores[0] = self.score_draw   # Both players get draw bonus score
-            scores[1] = self.score_draw   #
+        if match.result == MatchResult.WHITE_WINS:
+            scores[0] = self.score_win
+        elif match.result == MatchResult.BLACK_WINS:
+            scores[1] = self.score_win
+        elif match.result == MatchResult.DRAW:
+            scores[0] = self.score_draw
+            scores[1] = self.score_draw 
         for i, player in enumerate(opponents):
             self.scoreboard[player]["games"] += 1
             self.scoreboard[player]["score"] += scores[i]
@@ -274,7 +288,7 @@ class CfMatch:
     def __init__(self, opponents: list[CfPlayer], tournament: CfTournament):
         self.opponents = opponents
         self.tournament = tournament
-        self.result = 0
+        self.result = MatchResult.ONGOING
         self.time_limits = [60, 60]
         self.assign_handicap()
 
@@ -306,13 +320,19 @@ class CfMatch:
         else:
             self.time_limits[1] += time_handicap # add time handicap because it has a negative value
 
+    def set_result(self, result):
+        if isinstance(result, MatchResult):
+            self.result = result
+        else:
+            raise ValueError("result must be")
+
     def white_wins(self):
         """
         Sets the result of the game to indicate that White has won.
         This method updates the `result` attribute of the game instance to 1,
         signifying that the White player is the winner.
         """
-        self.result = 1
+        self.set_result(MatchResult.WHITE_WINS)
 
     def black_wins(self):
         """
@@ -320,7 +340,7 @@ class CfMatch:
         This method updates the `result` attribute of the game instance to 2,
         signifying that the Black player is the winner.
         """
-        self.result = 2
+        self.set_result(MatchResult.BLACK_WINS)
 
     def draw(self):
         """
@@ -328,4 +348,4 @@ class CfMatch:
         This method updates the `result` attribute of the game instance to 3,
         signifying that the game ended in a draw.
         """
-        self.result = 3
+        self.set_result(MatchResult.DRAW)
