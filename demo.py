@@ -27,3 +27,7 @@ vp.matchdays[0][0].black_wins()
 vp.matchdays[0][1].white_wins()
 vp.matchdays[0][2].draw()
 vp.matchdays[0][3].white_wins()
+
+vp.evaluate_scoreboard()
+vp.print_stats()
+vp.match_schedule()
