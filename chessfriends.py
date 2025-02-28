@@ -140,17 +140,17 @@ class CfTournament:
 
         for matchday in range(0, number_of_players-1):
             self.matchdays.append([])
-            self.matchdays[matchday].append(CfMatch(fixed_player,
-                                              rotating_players[matchday],
-                                              self))
+            self.matchdays[matchday].append(CfMatch(
+                [fixed_player, rotating_players[matchday]],
+                self))
             if matchday % 2 != 0:
                 self.matchdays[matchday][0].swap_opponents()
 
             for i in range(1, (number_of_players // 2)):
                 self.matchdays[matchday].append(
-                    CfMatch(rotating_players[number_of_players - i - 1 + matchday],
-                            rotating_players[matchday + i],
-                            self))
+                    CfMatch([rotating_players[number_of_players - i - 1 + matchday],
+                             rotating_players[matchday + i]],
+                             self))
                 if i % 2 == 0:
                     self.matchdays[matchday][i].swap_opponents()
         self.reset_scoreboard()
@@ -250,8 +250,9 @@ class CfMatch:
     """
     Represents a chess match between two players in a tournament.
     Attributes:
-        opponents (list): A list containing two CfPlayer objects, 
-                          representing the white and black players.
+        opponents (list): A list containing two CfPlayer objects.
+                          The first object in the list represents the White player.
+                          Use swap_opponents to change order of list.
         tournament (CfTournament): The tournament in which the match is taking place.
         result (int): The result of the match
                       (0 for ongoing, 1 for white wins, 2 for black wins, 3 for draw).
@@ -270,8 +271,8 @@ class CfMatch:
         draw():
             Sets the result of the match to indicate a draw.
     """
-    def __init__(self, player_white: CfPlayer, player_black: CfPlayer, tournament: CfTournament):
-        self.opponents = [player_white, player_black]
+    def __init__(self, opponents: list[CfPlayer], tournament: CfTournament):
+        self.opponents = opponents
         self.tournament = tournament
         self.result = 0
         self.time_limits = [60, 60]
