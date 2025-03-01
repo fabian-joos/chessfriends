@@ -7,7 +7,7 @@ with additional time handicaps, and calculating scores.
 
 Modules:
 --------
-MatchResults: 
+MatchResults: Enum class to represent the possible results of a chess match.
 CfPlayer: Represents a chess player with attributes for first name, last name, and rating.
 CfTournament: Manages a chess tournament, including players, match pairings, and scores.
 CfMatch: Represents a chess match between two players, including the result and time limits.
@@ -21,6 +21,9 @@ from datetime import datetime
 
 
 class MatchResult(Enum):
+    """
+    Enum class to represent the possible results of a chess match.
+    """
     ONGOING = 0
     WHITE_WINS = 1
     BLACK_WINS = 2
