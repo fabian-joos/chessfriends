@@ -1,13 +1,13 @@
-from enum import Enum
-from datetime import datetime
-
-
 """
-ChessFriends is a Python project that enables the creation and administration of a chess tournament. 
-It includes classes to represent players, matches, and tournaments, and provides functionality for managing players, generating match pairings with additional time handicaps, and calculating scores.
+ChessFriends is a Python project that enables the 
+creation and administration of a chess tournament. 
+It includes classes to represent players, matches, and tournaments,
+and provides functionality for managing players, generating match pairings 
+with additional time handicaps, and calculating scores.
 
 Modules:
 --------
+MatchResults: 
 CfPlayer: Represents a chess player with attributes for first name, last name, and rating.
 CfTournament: Manages a chess tournament, including players, match pairings, and scores.
 CfMatch: Represents a chess match between two players, including the result and time limits.
@@ -15,6 +15,9 @@ CfMatch: Represents a chess match between two players, including the result and 
 For usage demo see the demo.py file
 """
 
+
+from enum import Enum
+from datetime import datetime
 
 
 class MatchResult(Enum):
