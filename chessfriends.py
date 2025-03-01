@@ -67,6 +67,9 @@ class CfPlayer:
 
     @property
     def rating(self):
+        """
+        Returns the rating of the player.
+        """
         return self._rating
 
     @rating.setter
@@ -258,7 +261,7 @@ class CfTournament:
             scores[1] = self.score_win
         elif match.result == MatchResult.DRAW:
             scores[0] = self.score_draw
-            scores[1] = self.score_draw 
+            scores[1] = self.score_draw
         for i, player in enumerate(opponents):
             self.scoreboard[player]["games"] += 1
             self.scoreboard[player]["score"] += scores[i]
