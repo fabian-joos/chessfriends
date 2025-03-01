@@ -320,11 +320,11 @@ class CfMatch:
         else:
             self.time_limits[1] += time_handicap # add time handicap because it has a negative value
 
-    def set_result(self, result):
-        if isinstance(result, MatchResult):
-            self.result = result
-        else:
-            raise ValueError("result must be")
+    def _set_result(self, result):
+        if not isinstance(result, MatchResult):
+            raise ValueError("Invalid result type: 'result' must be an instance of MatchResult.")
+        self.result = result
+        print(f"Match result set to: {self.result}")
 
     def white_wins(self):
         """
@@ -332,7 +332,7 @@ class CfMatch:
         This method updates the `result` attribute of the game instance to 1,
         signifying that the White player is the winner.
         """
-        self.set_result(MatchResult.WHITE_WINS)
+        self._set_result(MatchResult.WHITE_WINS)
 
     def black_wins(self):
         """
@@ -340,7 +340,7 @@ class CfMatch:
         This method updates the `result` attribute of the game instance to 2,
         signifying that the Black player is the winner.
         """
-        self.set_result(MatchResult.BLACK_WINS)
+        self._set_result(MatchResult.BLACK_WINS)
 
     def draw(self):
         """
@@ -348,4 +348,4 @@ class CfMatch:
         This method updates the `result` attribute of the game instance to 3,
         signifying that the game ended in a draw.
         """
-        self.set_result(MatchResult.DRAW)
+        self._set_result(MatchResult.DRAW)
