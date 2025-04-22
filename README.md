@@ -41,43 +41,43 @@ Robert Peters: 1 (1)
 Laura Howard: 3 (1)  
 
 --------------------------- Matchday 1 ---------------------------  
-Game 1: (BLACK_WINS) John Apple (1450, 60 min.) vs. Jane Flowers (1750, 53 min.)    
-Game 2: (WHITE_WINS) Laura Howard (1400, 55 min.) vs. Michael Hunter (1200, 60 min.)
-Game 3: (DRAW) Emily Smith (1600, 59 min.) vs. Robert Peters (1550, 60 min.)        
+Game 1: (BLACK_WINS) John Apple (1450, 60 min.) vs. Jane Flowers (1750, 53 min.)  
+Game 2: (WHITE_WINS) Laura Howard (1400, 55 min.) vs. Michael Hunter (1200, 60 min.)  
+Game 3: (DRAW) Emily Smith (1600, 59 min.) vs. Robert Peters (1550, 60 min.)  
 Game 4: (WHITE_WINS) Sarah Waters (1900, 45 min.) vs. David Porter (1300, 60 min.)  
 
 --------------------------- Matchday 2 ---------------------------  
-Game 1: (ONGOING) Michael Hunter (1200, 60 min.) vs. John Apple (1450, 54 min.)
-Game 2: (ONGOING) Jane Flowers (1750, 57 min.) vs. Emily Smith (1600, 60 min.)
-Game 3: (ONGOING) David Porter (1300, 60 min.) vs. Laura Howard (1400, 58 min.)
-Game 4: (ONGOING) Robert Peters (1550, 60 min.) vs. Sarah Waters (1900, 52 min.)
+Game 1: (ONGOING) Michael Hunter (1200, 60 min.) vs. John Apple (1450, 54 min.)  
+Game 2: (ONGOING) Jane Flowers (1750, 57 min.) vs. Emily Smith (1600, 60 min.)  
+Game 3: (ONGOING) David Porter (1300, 60 min.) vs. Laura Howard (1400, 58 min.)  
+Game 4: (ONGOING) Robert Peters (1550, 60 min.) vs. Sarah Waters (1900, 52 min.)  
 
 --------------------------- Matchday 3 ---------------------------  
-Game 1: (ONGOING) John Apple (1450, 60 min.) vs. Emily Smith (1600, 57 min.)
-Game 2: (ONGOING) Michael Hunter (1200, 60 min.) vs. David Porter (1300, 58 min.)
-Game 3: (ONGOING) Sarah Waters (1900, 57 min.) vs. Jane Flowers (1750, 60 min.)
-Game 4: (ONGOING) Laura Howard (1400, 60 min.) vs. Robert Peters (1550, 57 min.)
+Game 1: (ONGOING) John Apple (1450, 60 min.) vs. Emily Smith (1600, 57 min.)  
+Game 2: (ONGOING) Michael Hunter (1200, 60 min.) vs. David Porter (1300, 58 min.)  
+Game 3: (ONGOING) Sarah Waters (1900, 57 min.) vs. Jane Flowers (1750, 60 min.)  
+Game 4: (ONGOING) Laura Howard (1400, 60 min.) vs. Robert Peters (1550, 57 min.)  
 
 --------------------------- Matchday 4 ---------------------------  
-Game 1: (ONGOING) David Porter (1300, 60 min.) vs. John Apple (1450, 57 min.)
-Game 2: (ONGOING) Emily Smith (1600, 60 min.) vs. Sarah Waters (1900, 53 min.)
-Game 3: (ONGOING) Robert Peters (1550, 52 min.) vs. Michael Hunter (1200, 60 min.)
-Game 4: (ONGOING) Jane Flowers (1750, 52 min.) vs. Laura Howard (1400, 60 min.)
+Game 1: (ONGOING) David Porter (1300, 60 min.) vs. John Apple (1450, 57 min.)  
+Game 2: (ONGOING) Emily Smith (1600, 60 min.) vs. Sarah Waters (1900, 53 min.)  
+Game 3: (ONGOING) Robert Peters (1550, 52 min.) vs. Michael Hunter (1200, 60 min.)  
+Game 4: (ONGOING) Jane Flowers (1750, 52 min.) vs. Laura Howard (1400, 60 min.)  
 
 --------------------------- Matchday 5 ---------------------------  
-Game 1: (ONGOING) John Apple (1450, 60 min.) vs. Sarah Waters (1900, 49 min.)
-Game 2: (ONGOING) David Porter (1300, 60 min.) vs. Robert Peters (1550, 54 min.)
-Game 3: (ONGOING) Laura Howard (1400, 60 min.) vs. Emily Smith (1600, 55 min.)
-Game 4: (ONGOING) Michael Hunter (1200, 60 min.) vs. Jane Flowers (1750, 47 min.)
+Game 1: (ONGOING) John Apple (1450, 60 min.) vs. Sarah Waters (1900, 49 min.)  
+Game 2: (ONGOING) David Porter (1300, 60 min.) vs. Robert Peters (1550, 54 min.)  
+Game 3: (ONGOING) Laura Howard (1400, 60 min.) vs. Emily Smith (1600, 55 min.)  
+Game 4: (ONGOING) Michael Hunter (1200, 60 min.) vs. Jane Flowers (1750, 47 min.)  
 
 --------------------------- Matchday 6 ---------------------------  
-Game 1: (ONGOING) Robert Peters (1550, 58 min.) vs. John Apple (1450, 60 min.)
-Game 2: (ONGOING) Sarah Waters (1900, 48 min.) vs. Laura Howard (1400, 60 min.)
-Game 3: (ONGOING) Jane Flowers (1750, 49 min.) vs. David Porter (1300, 60 min.)
-Game 4: (ONGOING) Emily Smith (1600, 50 min.) vs. Michael Hunter (1200, 60 min.)
+Game 1: (ONGOING) Robert Peters (1550, 58 min.) vs. John Apple (1450, 60 min.)  
+Game 2: (ONGOING) Sarah Waters (1900, 48 min.) vs. Laura Howard (1400, 60 min.)  
+Game 3: (ONGOING) Jane Flowers (1750, 49 min.) vs. David Porter (1300, 60 min.)  
+Game 4: (ONGOING) Emily Smith (1600, 50 min.) vs. Michael Hunter (1200, 60 min.)  
 
 --------------------------- Matchday 7 ---------------------------  
-Game 1: (ONGOING) John Apple (1450, 59 min.) vs. Laura Howard (1400, 60 min.)
-Game 2: (ONGOING) Robert Peters (1550, 60 min.) vs. Jane Flowers (1750, 55 min.)
-Game 3: (ONGOING) Michael Hunter (1200, 60 min.) vs. Sarah Waters (1900, 43 min.)
-Game 4: (ONGOING) David Porter (1300, 60 min.) vs. Emily Smith (1600, 53 min.)
+Game 1: (ONGOING) John Apple (1450, 59 min.) vs. Laura Howard (1400, 60 min.)  
+Game 2: (ONGOING) Robert Peters (1550, 60 min.) vs. Jane Flowers (1750, 55 min.)  
+Game 3: (ONGOING) Michael Hunter (1200, 60 min.) vs. Sarah Waters (1900, 43 min.)  
+Game 4: (ONGOING) David Porter (1300, 60 min.) vs. Emily Smith (1600, 53 min.)  
